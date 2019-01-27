@@ -13,10 +13,10 @@ This mini-project contains scripts to simulate fluid flow through a pipe using t
 - `particle_flow.py`: Particle tracing algorithm
 
 ## Output Files
--`cylinder_flow.msh`: Mesh file created by GMSH
--`cylinder_flow.xml`: Mesh file converted to .xml from .msh using dolfin-convert
--`cylinder_flow_physical_region.xml`: Mesh file with subdomain markers
--`cylinder_flow_facet_region.xml`: Mesh file with boundary markers
--`velocity.h5`: File containing velocity data created during FEM simulation
--`pressure.h5`: File containing pressure data created during FEM simulation
--`particles.csv`: File containing particle identifier, position (x,y,z), and normal velocity vector components
+- `cylinder_flow.msh`: Mesh file created by GMSH
+- `cylinder_flow.xml`: Mesh file converted to .xml from .msh using dolfin-convert
+- `cylinder_flow_physical_region.xml`: Mesh file with subdomain markers
+- `cylinder_flow_facet_region.xml`: Mesh file with boundary markers
+- `velocity.h5`: File containing velocity data created during FEM simulation
+- `pressure.h5`: File containing pressure data created during FEM simulation
+- `particles.csv`: File containing particle identifier, position (x,y,z), and normal velocity vector components
