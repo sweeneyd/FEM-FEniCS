@@ -5,7 +5,6 @@ This mini-project contains scripts to simulate fluid flow through a pipe using t
 
 ## File Summary
 - `cylinder_flow.step`: STEP file created in FreeCAD of a 1mm radius x 10mm height cylinder
-
 - `cylinder_flow.geo`: GMSH file containing meshing configuration
 - `fenics.sh`: Bash script to facilitate running a temporary FEniCS instance in Docker
 - `flow_simulation.sh`: Bash script facilitating meshing, mesh conversion, flow simulation, and particle tracing
