@@ -217,3 +217,4 @@ plt.ylabel('y')
 plt.title(r'$-\mathbf{\sigma}_h$')
 
 plt.tight_layout()
+plt.savefig('Fig3.png', dpi=300)

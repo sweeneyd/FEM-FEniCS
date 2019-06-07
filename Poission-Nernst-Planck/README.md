@@ -1,21 +1,26 @@
 # FEM-FEniCS/Poisson-Nernst-Planck
 
 ## Project Description
-This mini-project contains scripts to simulate fluid flow through a pipe using the [FEniCS](https://fenicsproject.org/) finite element framework in Docker. The pipe was made in [FreeCAD](https://www.freecadweb.org/) (`cylinder_flow.step`), with [GMSH](http://gmsh.info/) used for first-order tetrahedral meshing (`cylinder_flow.geo`). FEniCS code is written in Python and run through a temporary [Docker](https://www.docker.com/) instance (`fenics.sh`) and is used to first call convert the mesh file output from GMSH to a .xml file, then run the fluid model script (`pipe_flow.py`), and finally the particle tracing script (`particle_flow.py`). To run, start Docker and run `./flow_simulation.sh pipe_flow.py cylinder_flow.geo`.
+This mini-project contains scripts to to recreate the results from [Gao & Sun's 2018 paper](https://link.springer.com/article/10.1007/s10915-018-0727-5)* in which they develop a linearized local conservative mixed finite element method for the Poisson–Nernst–Planck Equations using the [FEniCS 2019.1.0](https://fenicsproject.org/) finite element framework. Specifically, the code mostly recreates Figures 3, 4, and 5 from this article using the using the CG/RT element pairing Anaconda Python 3.7 distribution.
+
+*Gao, H., & Sun, P. (2018). A Linearized Local Conservative Mixed Finite Element Method for Poisson–Nernst–Planck Equations. Journal of Scientific Computing, 77(2), 793-817.
 
 ## File Summary
-- `cylinder_flow.step`: STEP file created in FreeCAD of a 1 mm radius x 10 mm height cylinder
-- `cylinder_flow.geo`: GMSH file containing meshing configuration
-- `fenics.sh`: Bash script to facilitate running a temporary FEniCS instance in Docker
-- `flow_simulation.sh`: Bash script facilitating meshing, mesh conversion, flow simulation, and particle tracing
-- `pipe_flow.py`: 3D FEM simulation of pressure-drivein incompressible pipe flow using Taylor-Hood elements
-- `particle_flow.py`: Particle tracing algorithm
+- `pnp_mwe.py`: Python code with linearized PNP solver
 
 ## Output Files
-- `cylinder_flow.msh`: Mesh file created by GMSH
-- `cylinder_flow.xml`: Mesh file converted to .xml from .msh using dolfin-convert
-- `cylinder_flow_physical_region.xml`: Mesh file with subdomain markers
-- `cylinder_flow_facet_region.xml`: Mesh file with boundary markers
-- `velocity.h5`: File containing velocity data created during FEM simulation
-- `pressure.h5`: File containing pressure data created during FEM simulation
-- `particles.csv`: File containing particle identifier, position (x,y,z), and normal velocity vector components
+- `c/c.pvd`: VTK-formatting file for solution for undetermined constant for Neumann problem (c)
+- `c/cXXXXXX.vtu`: VTK-formatting file for solution for undetermined constant for Neumann problem (c)
+- `u/u.pvd`: VTK-formatting file for solution for scalar potential field (u)
+- `u/uXXXXXX.vtu`: VTK-formatting file for solution for scalar potential field (u)
+- `n/n.pvd`: VTK-formatting file for solution for negatively-charged species (n)
+- `n/nXXXXXX.vtu`: VTK-formatting file for solution for negatively-charged species (n)
+- `p/p.pvd`: VTK-formatting file for solution for positively-charged species (p)
+- `p/pXXXXXX.vtu`: VTK-formatting file for solution for positively-charged species (p)
+- `sigma/sigma.pvd`: VTK-formatting file for solution for electrical flux vector (sigma)
+- `sigma/sigmaXXXXXX.vtu`: VTK-formatting file for solution for electrical flux vector (sigma)
+- `J_n/J_n.pvd`: VTK-formatting file for solution for mass flux vector for species n (J_n)
+- `J_n/J_nXXXXXX.vtu`: VTK-formatting file for solution for mass flux vector for species n (J_n)
+- `J_p/J_p.pvd`: VTK-formatting file for solution for mass flux vector for species p (J_p)
+- `J_p/J_pXXXXXX.vtu`: VTK-formatting file for solution for mass flux vector for species p (J_p)
+- `Fig3.png`: PNG figure showing the solutions for u, n, p, sigma, J_n, and J_p, at time T (300 dpi)
