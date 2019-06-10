@@ -6,3 +6,4 @@ Projects and models I've created in the [FEniCS](https://fenicsproject.org/) fin
 - **ParticleTracing**: A mini-project containing a simulation of pressure-driven flow through a pipe and using the solution to trace particles, tied together with Bash scripts.
 
 - **Poission-Nernst-Planck**: A mini-project recreating figures from a 2018 paper by Gao & Sun that solves the PNP equations for drift-diffusion using a mixed element formulation (CG/RT)
+
