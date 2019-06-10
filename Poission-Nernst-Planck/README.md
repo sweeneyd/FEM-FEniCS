@@ -1,7 +1,7 @@
 # FEM-FEniCS/Poisson-Nernst-Planck
 
 ## Project Description
-This mini-project contains scripts to to recreate the results from [Gao & He's 2017 paper](https://link.springer.com/article/10.1007/s10915-017-0400-4) and [Gao & Sun's 2018 paper](https://link.springer.com/article/10.1007/s10915-018-0727-5)* in which they develop a linearized conservative finite element methods for the Poisson–Nernst–Planck Equations using the [FEniCS 2019.1.0](https://fenicsproject.org/) finite element framework. Specifically, the code mostly recreates Figure 5 from [1] and Figures 3, 4, and 5 from [2] this article using the using the CG/RT element pairing Anaconda Python 3.7 distribution.
+This mini-project contains scripts to to recreate the results from [Gao & He's 2017 paper](https://link.springer.com/article/10.1007/s10915-017-0400-4) and [Gao & Sun's 2018 paper](https://link.springer.com/article/10.1007/s10915-018-0727-5) in which they develop a linearized conservative finite element methods for the Poisson–Nernst–Planck Equations using the [FEniCS 2019.1.0](https://fenicsproject.org/) finite element framework. Specifically, the code mostly recreates Figure 5 from [1] and Figures 3, 4, and 5 from [2] using the using the CG/RT element pairing Anaconda Python 3.7 distribution.
 
 [1] Gao, H., & He, D. (2017). Linearized conservative finite element  methods for the Nernst–Planck–Poisson equations. Journal of Scientific Computing, 72(3), 1269-1289.
 
